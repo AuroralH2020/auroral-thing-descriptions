@@ -14,6 +14,7 @@
     }
   },
   "oid": "1234",
+  "adapterId": "thermometerIdInMyInfrastructure",
   "@type":
     "Thermometer",
   "located_in": {
