@@ -16,4 +16,5 @@ This repository contains examples of Thing Descriptions and mappings for differe
 **Editors and playgrounds**
 * [Thing Description Editor](https://eclipse.github.io/editdor)
 * [JSON-LD Playground](https://json-ld.org/playground)
+* [SHACL shapes Playgound](https://shacl.org/playground/)
 
