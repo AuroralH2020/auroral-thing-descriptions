@@ -1,3 +1,5 @@
+```
+
 {
     "@context": ["https://www.w3.org/2019/wot/td/v1",
                  "https://auroralh2020.github.io/auroral-ontology-contexts/core/services.json"],
@@ -25,3 +27,4 @@
         }
     }
 }
+```
