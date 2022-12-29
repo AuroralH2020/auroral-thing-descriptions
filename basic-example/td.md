@@ -15,26 +15,18 @@
   },
   "oid": "1234",
   "adapterId": "thermometerIdInMyInfrastructure",
-  "@type":
-    "Thermometer",
-  "located_in": {
-    "location_type": "Building",
-    "location_id": "http://dbpedia.org/building/example",
-    "label": "Office with temperature sensor"
-  },
+  "@type": "Thermometer",
   "description": "Room temperature sensor",
   "properties": {
     "room_temperature": {
       "title": "room_temperature",
-      "monitors": "AmbientTemperature",
-      "measures": "degreeCelsius",
+      "@type": "AmbientTemperature",
+      "isMeasuredIn": "degreeCelsius",
       "readOnly": true,
       "type": "number",
       "forms": [
         {
-          "op": [
-            "readproperty"
-          ],
+          "op": "readproperty",
           "href": "www.mydata.example.com/api/object/1234/property/room_temperature"
         }
       ]
