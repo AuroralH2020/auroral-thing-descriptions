@@ -1,15 +1,13 @@
 ```JSON
 {
+{
+  "td": {
   "@context": [
     "https://www.w3.org/2019/wot/td/v1",
     { 
      "adp": "https://auroral.iot.linkeddata.es/def/adapters#",
      "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
-     "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
-    },
-    {
-      "oid": { "@id": "adp:oid" },
-      "adapterId": { "@id": "adp:adapterId" }
+     "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#"
     }
   ],
   "security": [
@@ -25,8 +23,7 @@
 	    "geo:long": "17.1674"
   },
   "title": "MyRoomTemperature",
-  "oid": "1234",
-  "adapterId": "thermometerIdInMyInfrastructure",
+  "adapterId": "thermometer-Id-In-My-Infrastructure",
   "@type": "adp:Thermometer",
   "description": "Room temperature sensor",
   "properties": {
@@ -45,4 +42,5 @@
       ]
     }
   }
+}
 }
