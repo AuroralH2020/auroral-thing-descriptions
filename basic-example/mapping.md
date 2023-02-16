@@ -1,19 +1,24 @@
 ```JSON
 {
   "@context": [
-    "https://www.w3.org/2019/wot/td/v1",
-    "https://w3c.github.io/wot-discovery/context/discovery-context.jsonld"
+    "https://auroralh2020.github.io/auroral-ontology-contexts/adapters/context.json",
+    { 
+     "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    },
+    {
+      "iid": { "@id": "rdfs:label" }
+    }
   ],
   "oid": "1234",
-  "@type": "Thermometer",
-  "pid": "room_temperature",
-  "makesMeasurement": [
+  "iid": "mytemperature",
+  "@type": "adp:Thermometer",
+  "measurements": [
     {
-        "value": 10,
-        "isMeasuredIn": "degreeCelsius",
-        "hasValueType": "number",
-        "aboutProperty": "AmbientTemperature",
-        "timestamp": "2022-06-17T08:26:22Z"
+      "value": 123,
+      "type": "number",
+      "timestamp": "2022-06-17T08:26:22Z",
+      "property": "AmbientTemperature",
+      "isMeasuredIn": "degreeCelsius"
     }
   ]
 }
