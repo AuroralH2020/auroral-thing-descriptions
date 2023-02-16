@@ -12,7 +12,7 @@
   "oid": "1234",
   "iid": "mytemperature",
   "@type": "adp:Thermometer",
-  "measurements": [
+  "measurement": [
     {
       "value": 123,
       "type": "number",
