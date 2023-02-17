@@ -1,7 +1,5 @@
 ```JSON
-{
-{
-  "td": {
+ {
   "@context": [
     "https://www.w3.org/2019/wot/td/v1",
     { 
@@ -43,4 +41,4 @@
     }
   }
 }
-}
+
