@@ -1,0 +1,165 @@
+{
+    "title": "Energy monitor",
+    "@type": "adp:EnergyMonitor",
+    "@context": [
+        "https://www.w3.org/2019/wot/td/v1",
+        "https://w3c.github.io/wot-discovery/context/discovery-context.jsonld",
+        {
+            "om": "http://www.ontology-of-units-of-measure.org/page/om-2#",
+            "adp": "https://auroral.iot.linkeddata.es/def/adapters#"
+        }
+    ],
+    "security": [
+        "nosec_sc"
+    ],
+    "securityDefinitions": {
+        "nosec_sc": {
+            "scheme": "nosec"
+        }
+    },
+    "events": {
+        "energy": {
+            "title": "Energy counter in Kilowatt-hour",
+            "description": "Energy counter in Kilowatt-hour",
+            "unit": "om:kilowatthour",
+            "type": "number",
+            "@type": "adp:ActiveEnergy",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        },
+        "returned_energy": {
+            "title": "Energy returned to the grid in Kilowatt-hour",
+            "description": "Energy returned to the grid in Kilowatt-hour",
+            "unit": "om:kilowatthour",
+            "type": "number",
+            "@type": "adp:ReturnedEnergy",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        },
+        "total": {
+            "title": "Total energy in Wh",
+            "description": "Total energy in Wh (accumulated in device's non-volatile memory)",
+            "unit": "om:watthour",
+            "type": "number",
+            "@type": "adp:TotalEnergy",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        },
+        "total_returned": {
+            "title": "Total energy returned to the grid in Wh",
+            "description": "Total energy returned to the grid in Wh (accumulated in device's non-volatile memory)",
+            "unit": "om:watt-hour",
+            "type": "number",
+            "@type": "adp:ReturnedEnergy",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        },
+        "power": {
+            "title": "Instantaneous active power in Watts",
+            "description": "Instantaneous active power in Watts",
+            "unit": "om:watt",
+            "type": "number",
+            "@type": "adp:InstantaneousActivePower",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        },
+        "voltage": {
+            "title": "Grid voltage in Volts",
+            "description": "Grid voltage in Volts",
+            "unit": "om:volt",
+            "type": "number",
+            "@type": "adp:ElectricVoltage",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        },
+        "current": {
+            "title": "Current in Amps",
+            "description": "Current in Amps",
+            "unit": "om:ampere",
+            "type": "number",
+            "@type": "adp:ElectricCurrent",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        },
+        "pf": {
+            "title": "Power factor (dimensionless)",
+            "description": "Power factor (dimensionless)",
+            "type": "number",
+            "@type": "adp:PowerFactor",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        },
+        "relay": {
+            "title": "Reports relay status",
+            "description": "Reports relay status: on, off or overpower",
+            "type": "string",
+            "@type": "adp:Relay",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        }
+    },
+    "adapterId": "energy-monitor"
+}

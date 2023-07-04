@@ -1,0 +1,39 @@
+
+{
+    "title": "Soil moisture sensor",
+    "@type": "adp:SoilMoistureSEnsor",
+    "@context": [
+        "https://www.w3.org/2019/wot/td/v1",
+        "https://w3c.github.io/wot-discovery/context/discovery-context.jsonld",
+        {
+            "om": "http://www.ontology-of-units-of-measure.org/page/om-2#",
+            "adp": "https://auroral.iot.linkeddata.es/def/adapters#"
+        }
+    ],
+    "security": [
+        "nosec_sc"
+    ],
+    "securityDefinitions": {
+        "nosec_sc": {
+            "scheme": "nosec"
+        }
+    },
+    "events": {
+        "soil_moisture": {
+            "title": "Soil moisture data",
+            "description": "Soil moisture data: contains height, unit and value.",
+            "type": "object",
+            "@type": "adp:SoilMoisture",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        }
+    },
+    "adapterId": "water-amr-sensor"
+}

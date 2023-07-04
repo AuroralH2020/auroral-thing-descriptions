@@ -1,0 +1,120 @@
+
+{
+    "title": "Weather station",
+    "@type": "adp:WeatherSensor",
+    "@context": [
+        "https://www.w3.org/2019/wot/td/v1",
+        "https://w3c.github.io/wot-discovery/context/discovery-context.jsonld",
+        {
+            "om": "http://www.ontology-of-units-of-measure.org/page/om-2#",
+            "adp": "https://auroral.iot.linkeddata.es/def/adapters#"
+        }
+    ],
+    "security": [
+        "nosec_sc"
+    ],
+    "securityDefinitions": {
+        "nosec_sc": {
+            "scheme": "nosec"
+        }
+    },
+    "events": {
+        "temperature": {
+            "title": "Reports temperature",
+            "description": "Reports temperature in °C",
+            "unit": "om:degreeCelsius",
+            "type": "number",
+            "@type": "adp:IndoorAmbientTemperature",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        },
+        "rel_humidity": {
+            "title": "Reports humidity",
+            "description": "Reports humidity in %",
+            "unit": "om:percent",
+            "type": "number",
+            "@type": "adp:RelativeHumidity",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        },
+        "dew_point": {
+            "title": "Dew point/Frost point",
+            "description": "Dew point/Frost point : float [ºC]",
+            "unit": "om:degreeCelsius",
+            "type": "number",
+            "@type": "adp:DewpointTemperature",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        },
+        "solar_irradiation": {
+            "title": "Solar irradiation",
+            "description": "Solar irradiation : int [W/m2]",
+            "unit": "om:Irradiance",
+            "type": "number",
+            "@type": "adp:DirectNormalIrradiance",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        },
+        "pressure": {
+            "title": "Atmospheric pressure",
+            "description": "Atmospheric pressure : float [hPa]",
+            "unit": "om:hectopascal",
+            "type": "number",
+            "@type": "adp:AtmosphericPressure",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        },
+        "rain": {
+            "title": "Accumulated precipitation",
+            "description": "Accumulated precipitation : float [mm]",
+            "unit": "om:millimetre",
+            "type": "number",
+            "@type": "adp:Rainfall",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        }
+    },
+    "adapterId": "water-amr-sensor"
+}

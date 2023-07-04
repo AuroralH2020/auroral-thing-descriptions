@@ -1,0 +1,116 @@
+{
+    "title": "Motion sensor",
+    "@type": "adp:MotionSensor",
+    "@context": [
+        "https://www.w3.org/2019/wot/td/v1",
+        "https://w3c.github.io/wot-discovery/context/discovery-context.jsonld",
+        {
+            "om": "http://www.ontology-of-units-of-measure.org/page/om-2#",
+            "adp": "https://auroral.iot.linkeddata.es/def/adapters#"
+        }
+    ],
+    "security": [
+        "nosec_sc"
+    ],
+    "securityDefinitions": {
+        "nosec_sc": {
+            "scheme": "nosec"
+        }
+    },
+    "events": {
+        "temperature": {
+            "title": "Reports temperature",
+            "description": "Reports temperature in °C",
+            "unit": "om:degreeCelsius",
+            "type": "number",
+            "@type": "adp:IndoorAmbientTemperature",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        },
+        "humidity": {
+            "title": "Reports humidity",
+            "description": "Reports humidity in %",
+            "unit": "om:percent",
+            "type": "number",
+            "@type": "adp:RelativeHumidity",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        },
+        "battery": {
+            "title": "Battery charge in percent.",
+            "description": "Battery charge in percent.",
+            "unit": "om:percent",
+            "type": "number",
+            "@type": "adp:BatteryLevel",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        },
+        "error": {
+            "title": "Reports sensor error",
+            "description": "Reports sensor error. If different from 0, there is an error with the sensor",
+            "type": "string",
+            "@type": "adp:Error",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        },
+        "act_reasons": {
+            "title": "List of reasons which woke up the device",
+            "description": "List of reasons which woke up the device: battery, button, periodic, poweron, sensor, alarm",
+            "type": "array",
+            "@type": "adp:ActReason",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        },
+        "ext_power": {
+            "title": "Identifies if the device is usb powered",
+            "description": "True if the device is usb powered",
+            "type": "boolean",
+            "@type": "adp:ExtPower",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        }
+    },
+    "adapterId": "motion-sensor"
+}

@@ -1,0 +1,148 @@
+{
+    "title": "GPS emergency button",
+    "@type": "adp:GPSEmergencyButton",
+    "@context": [
+        "https://www.w3.org/2019/wot/td/v1",
+        "https://w3c.github.io/wot-discovery/context/discovery-context.jsonld",
+        {
+            "om": "http://www.ontology-of-units-of-measure.org/page/om-2#",
+            "adp": "https://auroral.iot.linkeddata.es/def/adapters#",
+            "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#location"
+        }
+    ],
+    "security": [
+        "nosec_sc"
+    ],
+    "securityDefinitions": {
+        "nosec_sc": {
+            "scheme": "nosec"
+        }
+    },
+    "events": {
+        "bat_level": {
+            "title": "Battery charge in percent.",
+            "description": "Battery charge in percent.",
+            "unit": "om:percent",
+            "type": "number",
+            "@type": "adp:BatteryLevel",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        },
+        "alarm_status": {
+            "title": "Reports the alarm status.",
+            "description": "Reports the alarm status: string ['on', 'off'].",
+            "type": "string",
+            "@type": "adp:StatusProperty",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        },
+        "coordinates": {
+            "title": "Reports the sensor coordinates.",
+            "description": "Reports the sensor coordinates in WGS84 [degree].",
+            "@type": "geo:location",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        },
+        "beacon_mac": {
+            "title": "Mac address of closest position beacon.",
+            "description": "Mac address of closest position beacon 0X000000000000-0XFFFFFF.",
+            "type": "string",
+            "@type": "adp:BeaconMac",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        },
+        "x_axis_accel": {
+            "title": "X axis acceleration [g].",
+            "description": "X axis acceleration [g].",
+            "unit": "om:GravitationalAcceleration",
+            "type": "number",
+            "@type": "adp:XAxisAcceleration",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        },
+        "y_axis_accel": {
+            "title": "Y axis acceleration [g].",
+            "description": "Y axis acceleration [g].",
+            "unit": "om:GravitationalAcceleration",
+            "type": "number",
+            "@type": "adp:YAxisAcceleration",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        },
+        "z_axis_accel": {
+            "title": "Z axis acceleration [g].",
+            "description": "Z axis acceleration [g].",
+            "unit": "om:GravitationalAcceleration",
+            "type": "number",
+            "@type": "adp:ZAxisAcceleration",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        },
+        "angular_unit": {
+            "title": "The angular relative to the X-axis and the Y-axis.",
+            "description": "The angular relative to the X-axis and the Y-axis. [degree].",
+            "unit": "om:degree",
+            "type": "number",
+            "@type": "adp:AngularUnit",
+            "forms": [
+                {
+                    "op": [
+                        "subscribeevent",
+                        "unsubscribeevent"
+                    ],
+                    "href": "/"
+                }
+            ]
+        }
+    },
+    "adapterId": "gps-emergency-button"
+}
