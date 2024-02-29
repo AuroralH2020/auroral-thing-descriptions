@@ -1,11 +1,6 @@
  {
   "@context": [
-    "https://www.w3.org/2019/wot/td/v1",
-    { 
-     "adp": "https://auroral.iot.linkeddata.es/def/adapters#",
-     "om": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
-     "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#"
-    }
+    "https://www.w3.org/2019/wot/td/v1"
   ],
   "security": [
     "nosec_sc"
@@ -15,19 +10,15 @@
       "scheme": "nosec"
     }
   },
-  "geo:location": {
-    	"geo:lat": "48.1516",
-	    "geo:long": "17.1674"
-  },
   "title": "MyRoomTemperature",
-  "adapterId": "thermometer-Id-In-My-Infrastructure",
-  "@type": "adp:Thermometer",
+  "adapterId": "test-Id-In-My-Infrastructure",
+  "@type": "Thermometer",
   "description": "Room temperature sensor",
   "properties": {
     "room_temperature": {
       "title": "room_temperature",
       "description": "temperature in the room",
-      "@type": "adp:AmbientTemperature",
+      "@type": "AmbientTemperature",
       "unit": "om:degree_Celsius",
       "readOnly": true,
       "type": "number",
@@ -40,4 +31,3 @@
     }
   }
 }
-
